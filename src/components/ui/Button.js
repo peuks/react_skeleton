@@ -15,7 +15,8 @@ const Button = ({ children = "N/A", type, classSub }, props) => {
 
   switch (type) {
     case "nav":
-      type = "px-7 py-3 text-white uppercase rounded-full bg-bookmark-red";
+      type =
+        "px-7 py-3 text-white uppercase rounded-full bg-bookmark-red transition duration-300";
       break;
     default:
       type = "px-6 py-3 rounded-full shadow-md transition duration-300";
