@@ -1,7 +1,7 @@
 import React from "react"; // import { Section1, Section2 } from "./Sections";
 import { logoBookmark } from "../../assets/img";
 import { Button, Burger } from "../../components/ui/";
-import { SectionHero } from "./Sections";
+import { SectionHero, Features } from "./Sections";
 
 const Home = () => {
   return (
@@ -24,6 +24,7 @@ const Home = () => {
         </nav>
       </header>
       <SectionHero />
+      <Features />
     </>
   );
 };
