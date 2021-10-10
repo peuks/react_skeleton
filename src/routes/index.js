@@ -1,8 +1,9 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import { Home } from "../pages";
 
 const ROUTES = [
-  { path: "/", key: "ROOT", exact: true, component: () => <h1>Log in</h1> },
+  { path: "/", key: "ROOT", exact: true, component: () => <Home /> },
   {
     path: "/app",
     key: "APP",
