@@ -1,22 +1,30 @@
-import React from "react";
-import styled from "styled-components";
-import { Section1, Section2 } from "./Sections";
+import React from "react"; // import { Section1, Section2 } from "./Sections";
+import { logoBookmark } from "../../assets/img";
+import { Button, Burger } from "../../components/ui/";
+import { SectionHero } from "./Sections";
 
 const Home = () => {
   return (
-    <main className="flex center">
-      <StyledDiv className="flex center wrapp">
-        <h1>Salut tout le monde</h1>
-        <h2>Salut tout le monde</h2>
-        <h3>Salut tout le monde</h3>
-        <h4>Salut tout le monde</h4>
-        <h5>Salut tout le monde</h5>
-      </StyledDiv>
-    </main>
+    // Header
+    <>
+      <header>
+        <nav className="container flex justify-between items-center py-4 mt-4 sm:mt-12">
+          <div className="py-1">
+            <img src={logoBookmark} alt="" />
+          </div>
+          <ul className="hidden gap-12 justify-end items-center text-xs uppercase sm:flex text-bookmark-blue">
+            <li className="cursor-pointer">Features</li>
+            <li className="cursor-pointer">Pricing</li>
+            <li className="cursor-pointer">Contact</li>
+            <Button type="nav">Login</Button>
+          </ul>
+          <div className="flex sm:hidden">
+            <Burger />
+          </div>
+        </nav>
+      </header>
+      <SectionHero />
+    </>
   );
 };
-
-const StyledDiv = styled.div`
-  flex-flow: column;
-`;
 export default Home;
