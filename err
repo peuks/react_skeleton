@@ -1,9 +1,0 @@
-Compiled with warnings.
-
-src/pages/Home/Home.js
-  Line 3:10:  'Section1' is defined but never used  no-unused-vars
-  Line 3:20:  'Section2' is defined but never used  no-unused-vars
-
-Search for the keywords to learn more about each warning.
-To ignore, add // eslint-disable-next-line to the line before.
-
