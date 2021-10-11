@@ -34,7 +34,23 @@ const Section1 = () => {
         </div>
       </div>
       {/* Rounded Rectangle */}
-      <div className="hidden overflow-hidden absolute right-0 -bottom-28 top-32 w-2/4 h-80 rounded-l-full md:block bg-bookmark-purple lg: lg:-right-36"></div>
+      <div
+        class="
+          hidden
+          md:block
+          overflow-hidden
+          bg-bookmark-purple
+          rounded-l-full
+          absolute
+          h-80
+          w-2/4
+          top-32
+          right-0
+          lg:
+          -bottom-28
+          lg:-right-36
+        "
+      ></div>
     </section>
   );
 };

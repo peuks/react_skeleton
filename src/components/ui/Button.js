@@ -1,7 +1,8 @@
 import React from "react";
 
-const Button = ({ children = "N/A", type, classSub }, props) => {
+const Button = ({ children = "N/A", type, classSub ,classSetup}) => {
   let variant = "";
+  
   switch (classSub) {
     case "secondary":
       variant = "bg-bookmark-white hover:bg-bookmark-purple hover:text-white";
@@ -23,7 +24,7 @@ const Button = ({ children = "N/A", type, classSub }, props) => {
       break;
   }
   return (
-    <button type="button" className={`${type} ${variant}`}>
+    <button type="button" className={`${type} ${variant} ${classSetup}` }>
       {children}
     </button>
   );

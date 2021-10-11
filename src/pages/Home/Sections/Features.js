@@ -20,7 +20,7 @@ const Features = () => {
       </div>
       {/* <!-- Feature #1 --> */}
       <div class="relative mt-20 lg:mt-24">
-        <div class="container flex flex-col gap-x-24 justify-center items-center lg:flex-row">
+        <div class="container flex flex-col gap-x-2 justify-center items-center lg:flex-row">
           {/* <!-- Image --> */}
           <div class="flex z-10 flex-1 justify-center mb-10 lg:mb-0">
             <img
@@ -30,7 +30,7 @@ const Features = () => {
             />
           </div>
           {/* <!-- Content --> */}
-          <div class="flex flex-col flex-1 items-center lg:items-start">
+          <div class="flex flex-col flex-1 items lg:items-start">
             <h1 class="text-3xl text-bookmark-blue">Bookmark in one click</h1>
             <p class="my-4 text-center text-bookmark-grey lg:text-left sm:w-3/4 lg:w-full">
               Organize your bookmarks however you like. Our simple drag-and-drop
@@ -41,7 +41,20 @@ const Features = () => {
           </div>
         </div>
         {/* <!-- Rounded Rectangle --> */}
-        <div class="hidden overflow-hidden absolute -bottom-24 -left-36 w-2/4 h-80 rounded-r-full lg:block bg-bookmark-purple"></div>
+        <div
+          class="
+            hidden
+            lg:block
+            overflow-hidden
+            bg-bookmark-purple
+            rounded-r-full
+            absolute
+            h-80
+            w-2/4
+            -bottom-24
+            -left-36
+          "
+        ></div>
       </div>
       {/* <!-- Feature #2 --> */}
       <div class="relative mt-20 lg:mt-52">
