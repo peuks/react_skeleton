@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["sharable/components/*"],
+      "@routes/*": ["sharable/routes/*"],
+      "@pages/*": ["sharable/pages/*"],
+      "@hooks/*": ["sharable/hooks/*"],
+      "@utils/*": ["sharable/utils/*"],
+      "@services/*": ["sharable/services/*"]
+    }
+  }
+}

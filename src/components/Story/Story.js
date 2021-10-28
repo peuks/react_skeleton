@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import moment from "moment";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { getStory } from "../../api";
+import { getStory } from "@api";
+import { formatDate } from "@utils";
 
 const Story = ({ storyId }) => {
   const [story, setStory] = useState({});
@@ -31,9 +31,7 @@ const Story = ({ storyId }) => {
                 <span className="tag by">By {story.by && story.by}</span>
               </div>
               <div className="tags__col ">
-                <span className="tag">
-                  Date: {moment(story.time).format("Do MMMM")}
-                </span>
+                <span className="tag">Date: {formatDate(story.time)}</span>
               </div>
             </div>
           </Card>

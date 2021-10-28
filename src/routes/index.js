@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { Home } from "../pages";
-import Test from "../pages/Test/Test";
+import { Home } from "@pages";
 
 const ROUTES = [
   {
@@ -10,12 +9,6 @@ const ROUTES = [
     component: RenderRoutes, // here's the update
     routes: [
       { path: "/", key: "ROOT", exact: true, component: () => <Home /> },
-      {
-        path: "/test",
-        key: "APP_TEST",
-        exact: true,
-        component: Test,
-      },
     ],
   },
 ];

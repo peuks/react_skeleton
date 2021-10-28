@@ -2,11 +2,10 @@ import React, { useEffect, useState, useContext } from "react";
 //Animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { fadeIn } from "../../../../animations";
+import { fadeIn } from "@animations";
 import { BsJournalCode } from "react-icons/bs";
-import { getStory, getStoryIds } from "../../../../api";
-import { storyContext } from "../../../../contexts/storyContext";
-import useDebounce from "../../../../hooks/useDebounce";
+import { storyContext } from "@contexts/storyContext";
+// import useDebounce from "@hooks/useDebounce";
 
 const SearchBar = ({}) => {
   const { stories, setStories } = useContext(storyContext);
@@ -20,15 +19,11 @@ const SearchBar = ({}) => {
   /**
    * Delay api Request by 1sec after textInput has changed
    */
-  useDebounce((e) => fetchData(textInput), 1000, [textInput]);
+  // useDebounce((e) => fetchData(textInput), 1000, [textInput]);
 
   const inputHandler = (e) => {
     e.preventDefault();
     setTextInput(e.target.value);
-  };
-  const fetchData = async (textInput) => {
-    const test = await getStoryIds();
-    console.log(test);
   };
 
   const clearSearched = () => {
@@ -108,7 +103,7 @@ const StyledNav = styled(motion.header)`
 
       padding: 0.5rem 2rem;
       cursor: pointer;
-      background: #ff7676;
+      background: var(--clr-6);
       color: white;
     }
   }

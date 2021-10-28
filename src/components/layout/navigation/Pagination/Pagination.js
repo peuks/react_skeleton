@@ -69,10 +69,10 @@ const Button = styled.a`
   }
 
   &.active {
-    background-color: transparent;
+    background-color: var(--clr-6);
   }
   &:hover {
-    background-color: #ff7676;
+    background-color: var(--clr-6);
   }
 `;
 export default Pagination;

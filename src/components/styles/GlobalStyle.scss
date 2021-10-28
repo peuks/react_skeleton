@@ -4,11 +4,11 @@
 
 :root {
   --clr-1: #2b2d42;
-  --clr-2: #e86a92;
+  --clr-2: #ececec;
   --clr-3: #ffda41;
   --clr-4: #f7f7f9;
   --clr-5: #3f51b5;
-  --clr-6: #c1666b;
+  --clr-6: #ff7676;
 
   --dark80: rgba(48, 79, 89, 0.8);
   --dark60: rgba(48, 79, 89, 0.6);
@@ -39,6 +39,17 @@
 html {
   box-sizing: border-box;
   // font-size: clamp(100%, calc(1rem + 2vw), 24px);
+
+  /* Custom scroll bar */
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--clr-6);
+  }
+  &::-webkit-scrollbar-track {
+    background: white;
+  }
 }
 
 html,
