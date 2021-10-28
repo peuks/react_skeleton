@@ -1,29 +1,37 @@
-<h1 align="center">Welcome to React Skeleton 👋</h1>
+<h1 align="center">Welcome to The Hacker News Clone 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.5-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> A react template using bests practices I've found on the internet. At the moment there two branchs. One configuration with styled-component and another one with tailwind.
+> Hacker News Clone clone with React/ useContext, styled component, cracos and xios
+
+### ✨ [Demo](https://davidhackernew.herokuapp.com/)
 
 ## Install
 
 ```sh
-yarn install
+npm install
 ```
 
 ## Usage
 
 ```sh
-yarn run start
+ 
+```
+
+## Run tests
+
+```sh
+ 
 ```
 
 ## Author
 
-👤 **David Vanmak**
+👤 **David VANMAK**
 
 * Website: https://peuks.github.io/
 * GitHub: [@peuks](https://github.com/peuks)
-* LinkedIn: [@https:\/\/www.linkedin.com\/in\/davidvanmak\/](https://linkedin.com/in/https:\/\/www.linkedin.com\/in\/davidvanmak\/)
+* LinkedIn: [@davidvanmak](https://linkedin.com/in/davidvanmak)
 
 ## Show your support
 
