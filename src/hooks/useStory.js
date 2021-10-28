@@ -1,7 +1,7 @@
 import React from "react";
 
-const Section1 = () => {
+const useStory = () => {
   return <div></div>;
 };
 
-export default Section1;
+export default useStory;
