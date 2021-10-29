@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-const storyContext = createContext();
+const storyContext = createContext([]);
 
 export { storyContext };

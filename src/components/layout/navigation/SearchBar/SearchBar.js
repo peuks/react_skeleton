@@ -1,34 +1,44 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 //Animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { fadeIn } from "@animations";
 import { BsJournalCode } from "react-icons/bs";
 import { storyContext } from "@contexts/storyContext";
+import useDebounce from "hooks/useDebounce";
+// import useSearch from "hooks/useSearch";
 // import useDebounce from "@hooks/useDebounce";
 
 const SearchBar = ({}) => {
   const { stories, setStories } = useContext(storyContext);
+  // const { results } = useSearch();
 
   const [textInput, setTextInput] = useState("");
-
-  const { setData, data } = useContext(storyContext);
-  const test = () => {
-    console.log(stories);
-  };
+  const [filtered, setfiltered] = useState("");
   /**
    * Delay api Request by 1sec after textInput has changed
    */
-  // useDebounce((e) => fetchData(textInput), 1000, [textInput]);
+  useDebounce(
+    (e) =>
+      setfiltered(
+        stories
+          .filter((word) => word.title.toLowerCase().includes(textInput))
+          .sort()
+          .splice(0, 5)
+      ) && setStories(filtered),
+
+    1000,
+    [textInput]
+  );
 
   const inputHandler = (e) => {
     e.preventDefault();
     setTextInput(e.target.value);
   };
 
-  const clearSearched = () => {
-    setData({});
-  };
+  // const clearSearched = () => {
+  //   setData({});
+  // };
   return (
     <StyledNav
       className="container"
@@ -36,7 +46,9 @@ const SearchBar = ({}) => {
       initial="hidden"
       animate="show"
     >
-      <Logo onClick={clearSearched}>
+      <Logo
+      // onClick={clearSearched}
+      >
         <BsJournalCode size={"4rem"} />
         <h1>Hacker News</h1>
       </Logo>
@@ -61,29 +73,28 @@ const SearchBar = ({}) => {
 };
 
 const StyledNav = styled(motion.header)`
-  width: 100%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   font-size: 1.5rem;
   input {
-    width: 70%;
-    padding: 0.5rem;
     border: none;
     box-shadow: var(--shadow);
+    padding: 0.5rem;
+    width: 100%;
   }
 
   .search {
-    height: 2.5rem;
     display: flex;
+    height: 2.5rem;
     width: clamp(15em, 20em + 18vw, 50%);
     & > * {
       border: none;
     }
     input {
-      flex: 10;
-      border-radius: 1.5625rem 0 0 1.5625rem;
+      border-radius: var(--rounded) 0 0 var(--rounded);
 
       &:focus,
       &:hover {
@@ -98,27 +109,22 @@ const StyledNav = styled(motion.header)`
     }
 
     button {
-      border-radius: 0 1.5625rem 1.5625rem 0;
-      box-shadow: var(--shadow);
-
-      padding: 0.5rem 2rem;
-      cursor: pointer;
       background: var(--clr-6);
-      color: white;
+      border-radius: 0 var(--rounded) var(--rounded) 0;
+      box-shadow: var(--shadow);
+      color: var(--clr-4);
+      cursor: pointer;
+      padding: 0.5rem 2rem;
     }
   }
 `;
 
 const Logo = styled(motion.div)`
+  align-items: center;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 1rem;
-  cursor: pointer;
-  img {
-    height: 2rem;
-    width: 2rem;
-  }
 `;
 
 export default SearchBar;

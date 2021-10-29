@@ -1,12 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400");
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
   --clr-1: #2b2d42;
-  --clr-2: #ececec;
-  --clr-3: #ffda41;
   --clr-4: #f7f7f9;
+  --clr-3: #ffda41;
   --clr-5: #3f51b5;
   --clr-6: #ff7676;
 
@@ -27,6 +24,9 @@
   --fs-body: 1rem;
 
   --shadow: 0px 0px 30px rgb(0 0 0 / 20%);
+  --spacing: 2rem;
+
+  --rounded: 1.5625rem;
 }
 
 /* Reset class*/
@@ -58,7 +58,7 @@ body {
   width: 100%;
   height: 100%;
 
-  background: linear-gradient(to right, #22c1c3, #fdbb2d);
+  background: linear-gradient(to right, #fdbb2d, #22c1c3);
 
   color: var(--clr-4);
 }
@@ -148,7 +148,7 @@ ul {
   @extend .flex, .wrapp !optional;
   // @media screen and (min-width: 640px) {
   //   max-width: 640px;
-  // }
+  // }class="sc-iBPTik EcggI"
   // @media screen and (min-width: 768px) {
   //   max-width: 768px;
   // }
@@ -158,9 +158,9 @@ ul {
   // @media screen and (min-width: 1280px) {
   //   max-width: 1280px;
   // }
-  @media screen and (min-width: 1536px) {
-    max-width: 1536px;
-  }
+  // @media screen and (min-width: 1536px) {
+  //   max-width: 1536px;
+  // }
 }
 
 .wrapp {

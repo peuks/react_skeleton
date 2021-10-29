@@ -1,16 +1,21 @@
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import styled from "styled-components";
 import { getStory } from "@api";
 import { formatDate } from "@utils";
-
+import { storyContext } from "../../contexts/storyContext";
 const Story = ({ storyId }) => {
   const [story, setStory] = useState({});
   const [loaded, setloaded] = useState(false);
 
+  const { stories, setStories } = useContext(storyContext);
+
   useEffect(async () => {
     getStory(storyId).then((e) => {
-      e && e.url && setStory(e);
+      e && e.url && e.title.length > 0 && setStory(e);
+      const tempArray = stories;
+      tempArray.push(e);
+      setStories([...stories, e]);
       setloaded(!loaded);
     });
   }, [storyId]);

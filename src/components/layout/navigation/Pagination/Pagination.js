@@ -3,36 +3,33 @@ import styled from "styled-components";
 
 const Pagination = ({ next, prev, currentPage, index, maxPages, goTO }) => {
   return (
-    <div className="">
-      <PaginationStyle className="pagination">
-        <Button onClick={prev} href="#!-1" className="pagination_i">
-          prev
-        </Button>
-        {[...Array(maxPages).keys()]
-          .map((x) => x + index)
-          .map((currElement) => {
-            return (
-              <Button
-                onClick={goTO}
-                id={currElement}
-                href="#!1"
-                className={`${currElement === currentPage ? "active" : ""}`}
-              >
-                {currElement}
-              </Button>
-            );
-          })}
+    <PaginationStyle className="pagination container">
+      <Button onClick={prev}>prev</Button>
+      {[...Array(maxPages).keys()]
+        .map((x) => x + index)
+        .map((currElement) => {
+          return (
+            <Button
+              onClick={goTO}
+              id={currElement}
+              href="#!1"
+              className={`number ${
+                currElement === currentPage ? "active" : ""
+              }`}
+            >
+              {currElement}
+            </Button>
+          );
+        })}
 
-        <Button onClick={next} href="#!+1">
-          next
-        </Button>
-      </PaginationStyle>
-    </div>
+      <Button onClick={next}>next</Button>
+    </PaginationStyle>
   );
 };
 
 const PaginationStyle = styled.div`
   display: flex;
+  justify-content: center;
   gap: 0.5rem;
   animation: pagination-in 500ms ease both;
   /* Prev and Next BTN */
@@ -41,6 +38,12 @@ const PaginationStyle = styled.div`
   }
   & > :last-child {
     margin-left: 1.5rem;
+  }
+  .number {
+    display: none;
+    @media screen and (min-width: 560px) {
+      display: block;
+    }
   }
 `;
 
