@@ -1,13 +1,17 @@
+import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 
 const Pagination = ({ next, prev, currentPage, index, maxPages, goTO }) => {
+  let delay = 0.3;
+
   return (
     <PaginationStyle className="pagination container">
       <Button onClick={prev}>prev</Button>
       {[...Array(maxPages).keys()]
         .map((x) => x + index)
         .map((currElement) => {
+          delay += 0.155;
           return (
             <Button
               onClick={goTO}
@@ -16,6 +20,24 @@ const Pagination = ({ next, prev, currentPage, index, maxPages, goTO }) => {
               className={`number ${
                 currElement === currentPage ? "active" : ""
               }`}
+              variants={{
+                hidden: {
+                  opacity: 0,
+                },
+                show: {
+                  opacity: 1,
+                  transition: {
+                    duration: 0.75,
+                    delay: delay,
+                  },
+                  exit: {
+                    opacity: 0,
+                    transition: { duration: 0.75 },
+                  },
+                },
+              }}
+              initial="hidden"
+              animate="show"
             >
               {currElement}
             </Button>
@@ -47,7 +69,7 @@ const PaginationStyle = styled.div`
   }
 `;
 
-const Button = styled.a`
+const Button = styled(motion.a)`
   font-size: 1rem;
   text-decoration: none;
   text-align: center;

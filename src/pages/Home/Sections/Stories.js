@@ -18,7 +18,7 @@ const Stories = ({}) => {
   );
   const filteredData = currentData();
   const incrementCount = () => {
-    setCount(count + 5);
+    setCount(count + 1);
   };
   let delay2 = 0.3;
 
