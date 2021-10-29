@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { getStory } from "@api";
 import { formatDate } from "@utils";
 import { storyContext } from "../../contexts/storyContext";
-const Story = ({ storyId }) => {
+const Story = ({ storyId, delay }) => {
   const [story, setStory] = useState({});
   const [loaded, setloaded] = useState(false);
 
@@ -22,13 +22,34 @@ const Story = ({ storyId }) => {
 
   return (
     <>
-      {!loaded ? (
-        <Card className="card wrapp center">
-          <h2>Loading</h2>
-        </Card>
-      ) : (
+      {
+        // !loaded ? (
+        //   <Card className="card wrapp center">
+        //     <h2>Loading</h2>
+        //   </Card>
+        // ) :
         <a href={story.url} id="">
-          <Card className="card wrapp spacing">
+          <Card
+            className="card wrapp spacing"
+            variants={{
+              hidden: {
+                opacity: 0,
+              },
+              show: {
+                opacity: 1,
+                transition: {
+                  duration: 0.75,
+                  delay: delay,
+                },
+                exit: {
+                  opacity: 0,
+                  transition: { duration: 0.75 },
+                },
+              },
+            }}
+            initial="hidden"
+            animate="show"
+          >
             <h2>{story.title}</h2>
             <div className="tags">
               <div className="tags__col tags__col--left">
@@ -41,7 +62,7 @@ const Story = ({ storyId }) => {
             </div>
           </Card>
         </a>
-      )}
+      }
     </>
   );
 };

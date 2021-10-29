@@ -11,7 +11,7 @@ import useScroll from "hooks/useScroll";
 const Stories = ({}) => {
   const { storiesIds } = useFetchData();
 
-  const { count, setCount } = useCount(30);
+  const { count, setCount } = useCount(3);
   const { currentPage, currentData, next, prev, index, goTO } = usePagination(
     storiesIds,
     count
@@ -20,12 +20,7 @@ const Stories = ({}) => {
   const incrementCount = () => {
     setCount(count + 5);
   };
-
-  const { scroll } = useScroll();
-
-  useEffect(() => {
-    scroll();
-  }, [count, scroll]);
+  let delay2 = 0.3;
 
   return (
     <Container>
@@ -42,7 +37,11 @@ const Stories = ({}) => {
         <Grid>
           <AnimateSharedLayout type="crossfade">
             {filteredData.length &&
-              filteredData.map((id) => <Story storyId={id} key={id} />)}
+              filteredData.map((id) => {
+                delay2 += 0.05;
+
+                return <Story storyId={id} key={id} delay={delay2} />;
+              })}
           </AnimateSharedLayout>
         </Grid>
         <div className="container">
