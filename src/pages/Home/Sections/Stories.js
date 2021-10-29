@@ -76,7 +76,10 @@ const Container = styled(motion.div)`
 `;
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(clamp(248px, 50vw, 350px), 1fr)
+  );
   gap: var(--spacing);
 `;
 

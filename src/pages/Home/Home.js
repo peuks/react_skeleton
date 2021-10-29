@@ -5,15 +5,7 @@ import { Stories } from "./Sections";
 
 const Home = () => {
   const [stories, setStories] = useState([]);
-  function refreshPage() {
-    window.location.reload(false);
-  }
 
-  useEffect(() => {
-    setTimeout(() => {
-      refreshPage();
-    }, 30000);
-  }, []);
   return (
     <storyContext.Provider value={{ stories, setStories }}>
       <SearchBar />

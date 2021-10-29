@@ -89,7 +89,7 @@ const StyledNav = styled(motion.header)`
   .search {
     display: flex;
     height: 2.5rem;
-    width: clamp(15em, 20em + 18vw, 50%);
+    width: clamp(11em, 14em + 18vw, 70%);
     & > * {
       border: none;
     }
@@ -114,7 +114,7 @@ const StyledNav = styled(motion.header)`
       box-shadow: var(--shadow);
       color: var(--clr-4);
       cursor: pointer;
-      padding: 0.5rem 2rem;
+      padding: 0.5rem min(8vw, 4rem);
     }
   }
 `;
