@@ -47,6 +47,7 @@ const Story = ({ storyId }) => {
 };
 
 const Card = styled(motion.div)`
+width: 61%;
 /* backdrop-filter: blur( 15.5px ); */
 background: rgba( 22, 0, 0, 0.25 );
 border-radius: 10px;
@@ -61,6 +62,7 @@ color: white;
   }
   .tags {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     &__col{
       &--left{

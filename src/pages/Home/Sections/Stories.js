@@ -25,7 +25,8 @@ const Stories = ({}) => {
 
   useEffect(() => {
     scroll();
-  }, [count]);
+  }, [count, scroll]);
+
   return (
     <Container>
       <StyledDiv className="flex">
