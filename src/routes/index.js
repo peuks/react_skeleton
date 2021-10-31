@@ -9,6 +9,7 @@ const ROUTES = [
     component: RenderRoutes, // here's the update
     routes: [
       { path: "/", key: "ROOT", exact: true, component: () => <Home /> },
+      // Add a new route here}
     ],
   },
 ];

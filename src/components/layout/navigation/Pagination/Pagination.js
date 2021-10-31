@@ -6,7 +6,7 @@ const Pagination = ({ next, prev, currentPage, index, maxPages, goTO }) => {
   let delay = 0.3;
 
   return (
-    <PaginationStyle className="pagination container">
+    <PaginationStyle className="pagination">
       <Button onClick={prev}>prev</Button>
       {[...Array(maxPages).keys()]
         .map((x) => x + index)
@@ -49,7 +49,7 @@ const Pagination = ({ next, prev, currentPage, index, maxPages, goTO }) => {
   );
 };
 
-const PaginationStyle = styled.div`
+const PaginationStyle = styled.nav`
   display: flex;
   justify-content: center;
   gap: 0.5rem;

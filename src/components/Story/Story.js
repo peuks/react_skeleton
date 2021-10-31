@@ -10,7 +10,7 @@ const Story = ({ storyId, delay }) => {
 
   const { stories, setStories } = useContext(storyContext);
 
-  useEffect(async () => {
+  useEffect(() => {
     getStory(storyId).then((e) => {
       e && e.url && e.title.length > 0 && setStory(e);
       const tempArray = stories;
@@ -28,9 +28,9 @@ const Story = ({ storyId, delay }) => {
         //     <h2>Loading</h2>
         //   </Card>
         // ) :
-        <a href={story.url} id="">
+        <a href={story.url} id={story.id}>
           <Card
-            className="card wrapp spacing"
+            className="card wrapp "
             variants={{
               hidden: {
                 opacity: 0,
@@ -56,7 +56,7 @@ const Story = ({ storyId, delay }) => {
                 <span className="tag type">{story.type}</span>
                 <span className="tag by">By {story.by && story.by}</span>
               </div>
-              <div className="tags__col ">
+              <div className="tags__col">
                 <span className="tag">Date: {formatDate(story.time)}</span>
               </div>
             </div>
@@ -68,16 +68,25 @@ const Story = ({ storyId, delay }) => {
 };
 
 const Card = styled(motion.div)`
-width: 61%;
+  background-color: var(--clr-4);
+  border-radius: 0.625rem;
+  box-shadow: var(--shadow);
+  color: var(--clr-4);
+  flex-direction: column;
+  line-height: 1.38;
+  margin-top: 1.1875rem;
+  
+  &.wrapp {
+    --pading: 1.5em 1em;
+  }
+
 /* backdrop-filter: blur( 15.5px ); */
 background: rgba( 22, 0, 0, 0.25 );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+border-radius: var(--rounded);
+box-shadow: var(--shadow);
 justify-content: space-between;
 min-height: 13.5rem;
 
-color: white;
   width: 100%;
   display: flex;
   }
@@ -96,6 +105,9 @@ color: white;
     border-radius: 3px;
     padding: 0 0.5rem;
   }
+
+
+  
   
 `;
 export default Story;

@@ -4,9 +4,8 @@ import { getStoryIds } from "@api";
 const useFetchData = (data = []) => {
   const [storiesIds, setStoriesIds] = useState(false);
 
-  useEffect(async () => {
-    const res = await getStoryIds();
-    setStoriesIds(res);
+  useEffect(() => {
+    getStoryIds().then((e) => setStoriesIds(e));
   }, []);
 
   return { storiesIds };
